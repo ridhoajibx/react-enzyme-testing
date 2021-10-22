@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import { setUp, findByTestAtrr } from "../../utils";
+import { findByTestAtrr } from "../../utils";
 
 import Header from "./index";
 
