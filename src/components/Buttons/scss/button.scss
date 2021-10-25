@@ -1,0 +1,56 @@
+button {
+    position: relative;
+    display: block;
+    width: 200px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: all 0.35s;
+
+    span {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #ff003b;
+        transition: all 0.35s;
+    }
+
+    &.btn-primary {
+        border: 2px solid #009a44;
+
+        &:after {
+            background: #009a44;
+        }
+    }
+
+    &.btn-danger {
+        border: 2px solid #ff003b;
+        
+        &:after {
+            background: #ff003b;
+        }
+    }
+}
