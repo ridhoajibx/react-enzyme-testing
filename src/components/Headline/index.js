@@ -9,10 +9,7 @@ function Headline(props) {
             <h1 data-test="title">{title && title}</h1>
             <p data-test="desc">{desc && desc}</p>
 
-            <Button onClick={e => {
-                e.preventDefault()
-                console.log("test button")
-            }} type="button" className="btn-primary">Post</Button>
+            <Button onSubmit={e => e.preventDefault()} type="button" className="btn-primary" buttonText="Post" />
         </div>
     )
 }

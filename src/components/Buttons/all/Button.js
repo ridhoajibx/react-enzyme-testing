@@ -1,10 +1,18 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
-export const Button = (props) => {
-    const { children } = props;
+const Button = (props) => {
+    const { buttonText, onSubmit } = props;
     return (
-        <button {...props}>
-            <span>{children}</span>
+        <button onClick={onSubmit} data-test="buttonComponent" {...props}>
+            <span>{buttonText}</span>
         </button>
     )
 }
+
+Button.propTypes = {
+    buttonText: propTypes.string,
+    onSubmit: propTypes.func
+};
+
+export { Button };
