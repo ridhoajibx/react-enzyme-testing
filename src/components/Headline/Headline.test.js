@@ -49,7 +49,7 @@ describe('Headline Component', () => {
             // const wrapper = component.find(`[data-test="Headline"]`);
             // find from attribute data-test
             const wrapper = findByTestAtrr(component, "headline-test")
-            expect(wrapper.length).toBe(1);
+            expect(wrapper.length).toBe(0);
         });
     });
 

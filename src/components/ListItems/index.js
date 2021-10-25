@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-export default function ListItem(props) {
+const ListItem = (props) => {
     const { title, desc } = props;
     if (!title) {
         return null
@@ -19,3 +19,5 @@ ListItem.propTypes = {
     title: propTypes.string,
     desc: propTypes.string,
 }
+
+export default ListItem;
