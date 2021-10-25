@@ -1,11 +1,8 @@
 import { types } from './types';
 import axios from 'axios';
 
-export const getPosts = (type) => {
+export const getPosts = () => {
     let url = "https://jsonplaceholder.typicode.com/posts";
-    if (type !== types.GET_POSTS) {
-        throw new Error('Wrong API call!');
-    }
     return async (dispatch) => {
         try {
             const res = await axios.get(url)

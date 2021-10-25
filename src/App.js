@@ -3,7 +3,6 @@ import Header from "./components/Headers";
 import Headline from "./components/Headline";
 import { connect } from "react-redux";
 import { getPosts } from './actions';
-import { types } from './actions/types'
 import { Button } from "./components/Buttons";
 import ListItem from "./components/ListItems";
 
@@ -13,7 +12,7 @@ function App(props) {
 
     const getAllPosts = (e) => {
         e.preventDefault();
-        getPosts(types.GET_POSTS);
+        getPosts();
     }
 
     console.log(posts)
@@ -59,7 +58,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getPosts: (type) => dispatch(getPosts(type))
+        getPosts: () => dispatch(getPosts())
     }
 }
 
