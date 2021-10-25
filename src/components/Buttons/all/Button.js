@@ -2,16 +2,16 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const Button = (props) => {
-    const { buttonText, onSubmit } = props;
+    const { buttontext, onSubmit } = props;
     return (
         <button onClick={onSubmit} data-test="buttonComponent" {...props}>
-            <span>{buttonText}</span>
+            <span>{buttontext}</span>
         </button>
     )
 }
 
 Button.propTypes = {
-    buttonText: propTypes.string,
+    buttontext: propTypes.string,
     onSubmit: propTypes.func
 };
 

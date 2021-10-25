@@ -6,7 +6,7 @@ describe('Component Button', () => {
     describe('Checking proptypes', ()=> {
         it('Should not throw a warning', ()=> {
             const expectedProps = {
-                buttonText: "Example button text",
+                buttontext: "Example button text",
                 onSubmit: () => {
 
                 }
@@ -21,7 +21,7 @@ describe('Component Button', () => {
         let wrapper;
         beforeEach(()=> {
             const props = {
-                buttonText: "Example button text",
+                buttontext: "Example button text",
                 onSubmit: () => {
 
                 }
