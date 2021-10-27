@@ -15,7 +15,7 @@ function App(props) {
         getPosts();
     }
 
-    console.log(posts)
+    // console.log(posts)
 
     const btnProps = {
         type: "button",
@@ -25,7 +25,7 @@ function App(props) {
     }
 
     return (
-        <div className="App">
+        <div className="App" data-test="appComponent">
             <Header />
             <section className="main">
                 <Headline title="Posts" desc="Click button to render!" />
@@ -34,14 +34,14 @@ function App(props) {
 
                 {posts.length > 0 &&
                     <div>
-                        {posts.map(post => {
-                            const { title, body, id } = post;
+                        {posts.map((post, idx) => {
+                            const { title, body } = post;
                             const listProps = {
                                 title,
                                 desc: body
                             }
 
-                            return <ListItem key={id} {...listProps} />
+                            return <ListItem key={idx} {...listProps} />
                         })}
                     </div>
                 }
