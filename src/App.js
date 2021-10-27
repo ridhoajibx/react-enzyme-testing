@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "./assets/scss/styles.scss";
+
 import Header from "./components/Headers";
 import Headline from "./components/Headline";
 import { connect } from "react-redux";
@@ -7,15 +9,16 @@ import { Button } from "./components/Buttons";
 import ListItem from "./components/ListItems";
 
 function App(props) {
-
+    const [isHide, setIsHide] = useState(false);
     const { getPosts, posts } = props;
 
+    
     const getAllPosts = (e) => {
         e.preventDefault();
         getPosts();
+        handleHideBtn()
     }
-
-    // console.log(posts)
+    const handleHideBtn = () => setIsHide((state) => !state);
 
     const btnProps = {
         type: "button",
@@ -29,8 +32,9 @@ function App(props) {
             <Header />
             <section className="main">
                 <Headline title="Posts" desc="Click button to render!" />
-
-                <Button {...btnProps} />
+                {!isHide &&
+                    <Button {...btnProps} />
+                }
 
                 {posts.length > 0 &&
                     <div>
